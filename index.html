@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackYourFuture — Module 3 Week 8: Accessibility Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; }
+    .student-card { transition: all 0.2s; }
+    .student-card:hover { transform: translateY(-2px); }
+    .correction { border-left: 4px solid; padding-left: 1rem; margin: 0.5rem 0; }
+    .good { border-color: #22c55e; background: rgba(34,197,94,0.05); }
+    .improve { border-color: #f59e0b; background: rgba(245,158,11,0.05); }
+    .missing { border-color: #ef4444; background: rgba(239,68,68,0.05); }
+    .pending { border-color: #64748b; background: rgba(100,116,139,0.08); }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+
+  <header class="bg-slate-800 border-b border-slate-700">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">♿</span>
+        <div>
+          <h1 class="text-2xl font-bold text-white">HackYourFuture — Week 8</h1>
+          <p class="text-slate-400">Accessibility Testing — Homework Corrections</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-slate-800/50 border-b border-slate-700 sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex gap-4 overflow-x-auto text-sm">
+      <a href="#material" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">📚 Material</a>
+      <a href="#assignment" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">📝 Assignment</a>
+      <a href="#corrections" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">✅ Corrections</a>
+      <a href="#rubric" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">📊 Rubric</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <section id="material" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📚 Course Material Summary</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">WCAG 2.1 / 2.2</h3>
+          <p class="text-slate-400 text-sm">4 principles: Perceivable, Operable, Understandable, Robust (POUR). Conformance levels: A (must), AA (should — legal baseline in EU/US), AAA (could).</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Keyboard Navigation</h3>
+          <p class="text-slate-400 text-sm">All interactive elements reachable via Tab. Visible focus indicators. Logical tab order. No keyboard traps. Skip-to-content links for repetitive nav.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Screen Readers</h3>
+          <p class="text-slate-400 text-sm">Semantic HTML &gt; ARIA. Headings hierarchy (h1 → h6). Alt text for images. Form labels. Landmark roles (header/main/nav/footer).</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Color Contrast</h3>
+          <p class="text-slate-400 text-sm">Text vs background: AA = 4.5:1 (normal), 3:1 (large 18pt+). UI components: 3:1. Don't convey info by color alone.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Automated Tools</h3>
+          <p class="text-slate-400 text-sm">axe-core (Playwright/Cypress integration), Lighthouse, WAVE, IBM Equal Access. Catch ~30-40% of issues. Manual testing required for the rest.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Testing Approach</h3>
+          <p class="text-slate-400 text-sm">Combine: automated scan (axe) + keyboard-only walkthrough + screen reader test (VoiceOver/NVDA) + zoom 200% + color blindness simulation.</p>
+        </div>
+      </div>
+      <div class="mt-4 bg-slate-800/50 rounded-lg p-4 border border-slate-700">
+        <p class="text-sm text-slate-400">📂 Reference slides: <code class="text-indigo-300">Accessibility session.pptx</code> (49 MB — see Slack <code>#qa-team-2026</code>, file too large for repo)</p>
+      </div>
+    </section>
+
+    <section id="assignment" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📝 Homework Assignment</h2>
+      <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+        <h3 class="text-lg font-semibold text-white mb-3">Accessibility Testing — Hands On</h3>
+        <p class="text-slate-300 mb-4 text-sm">Pick a real website. Run accessibility tests covering at least three WCAG principles. Report findings with severity, WCAG criterion mapped, and remediation suggestion. Bonus: write an automated axe-core test (Playwright).</p>
+        <h4 class="font-semibold text-indigo-400 mb-2">Required Tasks:</h4>
+        <ol class="text-slate-300 space-y-2 list-decimal list-inside text-sm">
+          <li>Run an automated scan (axe DevTools, WAVE, or Lighthouse) and document the findings</li>
+          <li>Perform a keyboard-only walkthrough of a critical user flow</li>
+          <li>Check color contrast on key text/UI elements</li>
+          <li>Map each issue to a WCAG 2.1 success criterion (e.g. 1.4.3, 2.1.1, 4.1.2)</li>
+          <li>Suggest remediation for each issue</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="rubric" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📊 Evaluation Rubric</h2>
+      <div class="bg-slate-800 rounded-lg p-6 border border-slate-700 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-600">
+              <th class="text-left py-2 text-indigo-400">Criteria</th>
+              <th class="text-center py-2 text-indigo-400">Weight</th>
+              <th class="text-left py-2 text-indigo-400">What we look for</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-300">
+            <tr class="border-b border-slate-700"><td class="py-2">Issue Identification</td><td class="text-center">25%</td><td>Variety of issue types (perceivable, operable, understandable, robust). Not just one category.</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">WCAG Mapping</td><td class="text-center">20%</td><td>Each finding mapped to a specific WCAG 2.1 success criterion (e.g. 1.4.3 Contrast Minimum).</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">Severity / Impact</td><td class="text-center">15%</td><td>Reasoned severity (Blocker / Critical / Major / Minor) tied to user impact, not just tool output.</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">Remediation Suggestions</td><td class="text-center">20%</td><td>Concrete, actionable fixes. Not just "add ARIA". Mention semantic HTML alternatives where applicable.</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">Methodology</td><td class="text-center">10%</td><td>Combines automated + manual (keyboard, screen reader, zoom). Doesn't rely solely on one tool.</td></tr>
+            <tr><td class="py-2">Presentation & Structure</td><td class="text-center">10%</td><td>Clean formatting, professional layout, easy to follow.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="corrections" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">✅ Individual Corrections</h2>
+      <p class="text-slate-400 mb-6">Each submission corrected against the Week 8 material. <span class="text-green-400">Green</span> = well done. <span class="text-yellow-400">Yellow</span> = could improve. <span class="text-red-400">Red</span> = missing/incorrect. <span class="text-slate-400">Gray</span> = pending review.</p>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Ping</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/WEEK8Homework-Ping.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Yianna Alexaki</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Report%20analysis_Yianna_Alexaki.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Sravanthi</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Week8-HomeWork-SaiSravanthi.docx" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission (DOCX)</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Angel Del Fabbro</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Angel%20Del%20Fabbro%20-%20Week%208%20-%20Hands%20On%20Assignment.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Csaba Pákozdi</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Csaba%20P%C3%A1kozdi%20-%20assignment%208.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Maria</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <div class="text-sm text-slate-400 mb-2">📁 Playwright a11y test (axe-core)</div>
+        <div class="flex gap-3 text-sm">
+          <a href="submissions/maria/aegean_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">aegean_a11y.spec.ts</a>
+          <a href="submissions/maria/TestPage.ts" class="text-indigo-400 hover:text-indigo-300">TestPage.ts</a>
+          <a href="https://github.com/ialex688/HYF_Assignments/tree/main/tests/tests/Week8" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
+        </div>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Kira</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <div class="text-sm text-slate-400 mb-2">📁 Playwright a11y test (axe-core)</div>
+        <div class="flex gap-3 text-sm">
+          <a href="submissions/kira/tests/homepage_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">homepage_a11y.spec.ts</a>
+          <a href="submissions/kira/pages/homepage_a11y.ts" class="text-indigo-400 hover:text-indigo-300">homepage_a11y.ts</a>
+          <a href="https://github.com/nebouroet/Homework-QA/tree/main/tests/e2e" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
+        </div>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Accessibility Testing Report (Unnamed)</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Accessibility%20Testing%20Report%20homework.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added. (Author unidentified — check Slack uploader.)</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Hw Week 8 (Unnamed)</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Hw%20week%208.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added. (Author unidentified — check Slack uploader.)</p></div>
+      </div>
+
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">A11Y Conclusion (Unnamed)</h3>
+          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+        </div>
+        <a href="submissions/Assignement%20A11Y%20Conclusion.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added. (Author unidentified — check Slack uploader.)</p></div>
+      </div>
+
+    </section>
+
+    <footer class="border-t border-slate-700 pt-6 mt-12 text-center text-slate-500 text-sm">
+      HackYourFuture Denmark — QA Team 2026 — Week 8 Accessibility Testing
+    </footer>
+
+  </main>
+
+</body>
+</html>
