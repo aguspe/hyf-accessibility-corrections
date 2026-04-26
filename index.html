@@ -120,67 +120,102 @@
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Ping</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">bitetoothpastebits.com</code></p>
         <a href="submissions/WEEK8Homework-Ping.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Issue Identification:</strong> Excellent variety — 5 manual bugs covering perceivable (alt text, contrast 1.06:1), operable (collapsed accordion exposing hidden content), robust (ARIA list structure / li[tabindex] in axe scan). All four POUR principles touched.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Methodology:</strong> Outstanding — combined axe-core (4-page scan: Homepage 1889, Navbar 0, Product 255, Footer 766 errors), WAVE, Lighthouse, NVDA, and keyboard. Comparison in conclusion shows tool tradeoffs clearly.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Severity:</strong> Reasoned — contrast measured (1.06:1 vs 4.5:1 required), accordion exposing hidden content correctly flagged as major (UX confusion + screen reader noise).</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG Mapping:</strong> Mentions "WCAG 2.1" contrast thresholds but doesn't tag specific success criteria per bug (e.g., 1.4.3 Contrast Minimum, 1.1.1 Non-text Content, 4.1.2 Name/Role/Value). Adding these IDs sharpens the report and aligns with industry bug formats.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Remediation:</strong> Bug reports describe expected/actual but stop short of concrete fixes. Add a one-liner remediation per bug: "wrap with &lt;ol&gt;", "add aria-label", "use aria-hidden when collapsed", etc.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Yianna Alexaki</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">en.aegeanair.com</code></p>
         <a href="submissions/Report%20analysis_Yianna_Alexaki.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Comparative Analysis:</strong> The standout strength — explicit "where they aligned" vs "where manual went further" framing. axe-core caught 2 violations (button-name Critical, color-contrast Serious 4.16:1); manual found 9+ additional barriers (focus escape from popup, payment icons announced as blank, "Read more" link soup, password eye unnamed). Honest assessment of tooling limits.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Issue Identification:</strong> Wide POUR coverage — operable (focus trap escape, calendar confusion), perceivable (icons announced blank), understandable ("Read more" link text), robust (button-name).</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Methodology:</strong> NVDA + WAVE + Playwright/axe-core + keyboard. Final reflection ("no single method is sufficient") shows real understanding of why combined approach matters.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG Mapping:</strong> axe tags include WCAG 2.0 A/AA + 2.1 A/AA in code, but the report itself doesn't tag individual issues to specific criteria (e.g., button-name → 4.1.2; color-contrast → 1.4.3; focus visibility → 2.4.7). Add per-issue tags.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Remediation:</strong> Findings are sharp but fixes are implicit. For each barrier add a developer-facing fix: "add aria-label='Switch to English'", "increase text color from #999 to #767676", etc.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Sravanthi</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Needs Improvement</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">proshop.dk</code></p>
         <a href="submissions/Week8-HomeWork-SaiSravanthi.docx" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission (DOCX)</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Bugs Found:</strong> Two valid screen reader issues — price not announced before purchase prompt (real UX blocker), unlabelled product image. Bug template structure is clean.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ Scope:</strong> Only 2 detailed bugs. The assignment expects broader coverage across WCAG principles. References WAVE/Siteimprove findings in one paragraph but doesn't document them as bugs.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ WCAG Mapping:</strong> No success criteria referenced. Both bugs map to 4.1.2 (Name, Role, Value) and 1.1.1 (Non-text Content) — should be cited.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ Remediation:</strong> No fix suggestions. Add concrete proposals: "add aria-label to price element", "provide meaningful alt text per product image".</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Methodology:</strong> Mentions WAVE, Siteimprove, VoiceOver — but no automated scan output (axe-core test) and no comparison/reflection on tool tradeoffs.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Polish:</strong> Date typo "10-04-2016" should be 2026. Spelling: "Naviagte" → "Navigate".</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Angel Del Fabbro</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">bbc.com</code> (chosen for known strong a11y baseline)</p>
         <a href="submissions/Angel%20Del%20Fabbro%20-%20Week%208%20-%20Hands%20On%20Assignment.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Coverage:</strong> Most comprehensive scope of any submission — keyboard, NVDA screen reader, headings/structure, contrast, images/media, forms, dynamic content, zoom 200%, mobile, timing, links/buttons. Site picked deliberately to test against a strong baseline (BBC).</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Critical Insight on 3rd-Party Noise:</strong> Correctly identifies that ads, cookie banners, and embedded media inflate axe results (1200+ violations). This is real-world thinking — shows you'd advise filtering 3rd-party from acceptance criteria. Excellent.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Bug Examples:</strong> Both bugs target real issues — repeated "See More" links (2.4.4 Link Purpose) and image alt = file name (1.1.1). Clean bug template with environment, attachments, reporter.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Severity Calibration:</strong> Both bugs marked "Minor" feels light. Repeated "See More" links break screen reader navigation by skim — typically Major when on a homepage. Calibrate against user impact, not tool default.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG Mapping:</strong> Tools and approach are excellent, but per-issue WCAG references are missing (2.4.4, 1.1.1, 1.4.4). Adding criterion IDs makes the report defensible to product/legal.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Bug Volume:</strong> Only 2 documented bugs. Given the scope you covered, expected 5-7. Could add at least one bug per category you scanned.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Csaba Pákozdi</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">dengamleby.dk</code></p>
         <a href="submissions/Csaba%20P%C3%A1kozdi%20-%20assignment%208.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Tool Comparison Table:</strong> The standout — quantified table comparing WAVE (40 issues), Axe DevTool (19), and Automated/Playwright (11) across 5 categories (image alt, link text, form control, contrast, zoom). Demonstrates the WCAG-on-WCAG truth that tools disagree, which is exactly the lesson of this assignment.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Bug Coverage:</strong> 5 well-documented bugs spanning POUR — alt text (1.1.1), form labels (1.3.1, 4.1.2), link names (2.4.4), contrast (1.4.3), zoom disabled (1.4.4). Clean bug template.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Manual Testing Depth:</strong> Specific NVDA observations (slider confusion, three-star scoring as redundant link, "Home for Easter" landmark issue) show real screen reader exploration, not just tool dependency.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG Mapping:</strong> References "WCAG demands" once (zoom maximum-scale ≥ 2) but doesn't tag bugs to success criteria. Each of the 5 bugs maps cleanly to a WCAG ID — adding them strengthens the report.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Severity Differentiation:</strong> All 5 bugs marked "major" except zoom (moderate). Differentiate by user impact — missing form label on subscription is annoyance; broken navigation is blocker.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Polish:</strong> Several "ti"-character issues (likely font rendering — "tes ng" / "naviga on" / "viola ons"). Worth a final read-through. Random "git add . / commit / push" snippet inside BUG-003 looks like a copy-paste artifact.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Maria</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Code Solid — Missing Report</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">en.aegeanair.com</code></p>
         <div class="text-sm text-slate-400 mb-2">📁 Playwright a11y test (axe-core)</div>
-        <div class="flex gap-3 text-sm">
+        <div class="flex gap-3 text-sm flex-wrap">
           <a href="submissions/maria/aegean_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">aegean_a11y.spec.ts</a>
           <a href="submissions/maria/TestPage.ts" class="text-indigo-400 hover:text-indigo-300">TestPage.ts</a>
           <a href="https://github.com/ialex688/HYF_Assignments/tree/main/tests/tests/Week8" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
         </div>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Test Code:</strong> Clean Playwright + AxeBuilder integration. Correct WCAG tag set (<code>wcag2a</code>, <code>wcag2aa</code>, <code>wcag21a</code>, <code>wcag21aa</code>). Logs each violation with rule ID, help, impact, and node count — useful for triage.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Test Artifact:</strong> Attaches the full <code>axe-report.json</code> via <code>testInfo.attach()</code> — professional touch that makes CI runs auditable.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ No Written Report:</strong> Assignment requires both code AND analysis (manual testing, comparison, conclusions). Submission is code-only — missing the report half entirely. See Yianna's submission on the same site (Aegean) for the analysis depth expected.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ No Manual Testing:</strong> No keyboard walkthrough, no screen reader observations. Automated scans miss focus management, link clarity, popup behavior — exactly the issues Yianna documented manually on the same site.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ POM Underused:</strong> <code>HomePage</code> only encapsulates <code>goto()</code>. Compare with Kira's POM that also exposes <code>runAccessibilityScan()</code> — better encapsulation, easier to reuse across pages.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Assertion Style:</strong> <code>expect(results.violations).toEqual([])</code> works but produces messy diff output on failure. Prefer <code>expect(results.violations.length).toBe(0)</code> with the violation log above acting as the diagnostic.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Kira</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">utopia8.ua</code></p>
         <div class="text-sm text-slate-400 mb-2">📁 Playwright a11y test (axe-core) + written conclusion</div>
         <div class="flex gap-3 text-sm flex-wrap">
           <a href="submissions/kira/tests/homepage_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">homepage_a11y.spec.ts</a>
@@ -188,25 +223,43 @@
           <a href="submissions/Assignement%20A11Y%20Conclusion.pdf" class="text-indigo-400 hover:text-indigo-300">📄 A11Y Conclusion</a>
           <a href="https://github.com/nebouroet/Homework-QA/tree/main/tests/e2e" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
         </div>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Code + Report Together:</strong> Best balance of any submission — Playwright POM AND a written conclusion that bridges the two. Manual findings explicitly cross-referenced with axe-core output ("Manual: I found... Automated: report confirms <code>.header__search &gt; button</code> has no inner text").</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ POM Quality:</strong> <code>Utopia8Page</code> encapsulates both navigation AND the <code>runAccessibilityScan()</code> method — proper separation of concerns. Other code submissions (Maria) leave the scan logic in the test file.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ WCAG Tag Set:</strong> Goes beyond the standard 4 tags by adding <code>contrast</code>, <code>focus-visible</code>, <code>heading-order</code> for finer-grained reporting. Shows you read the axe-core docs.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Remediation:</strong> Concrete and prescriptive — "developers should prioritize accessible namings by adding aria-labels to header and footer". Names the categories of fix and the locations.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Bug Format:</strong> Conclusion is narrative; doesn't include a structured bug template (ID/title/steps/expected/actual/severity). Add 3-5 bug entries to make findings reproducible.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG IDs:</strong> Mentions "WCAG 2.1 Level AA" upfront and zoom violation, but doesn't tag specific success criteria per finding (4.1.2 for button-name, 1.4.4 for zoom).</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Code Style:</strong> <code>WCAG_TAGS</code> array indentation is staircase-shaped — minor cosmetic. <code>as const</code> after the array means you don't need the spread <code>[...WCAG_TAGS]</code> in <code>.withTags()</code>.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Claudia</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">dot.vu</code></p>
         <a href="submissions/Accessibility%20Testing%20Report%20homework.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Bug Report Discipline:</strong> Cleanest bug format of any submission — every bug has Title / Description / Steps / Expected / Actual / Severity / Priority / Attachments. Numbered (BUG-001 through BUG-007). Sectioned by testing method (WAVE static DOM → Axe dynamic DOM → Manual).</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Issue Variety:</strong> Strong POUR coverage — landmarks/structure (Robust), missing labels + popup escape (Operable), focus visibility (Operable 2.4.7), tab order skipping (2.4.3). Mix of static DOM, dynamic, and interactive findings.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Manual Findings Are Sharp:</strong> Disappearing focus, skipped form fields ("Company size" and "How can we help" jumped over), and popup that ignores Escape — all real, all important, none of which automated scans would catch reliably.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG Mapping:</strong> Header declares "WCAG 2.1 AA" but bugs don't tag individual criteria. Each bug maps cleanly: BUG-001 → 1.3.1 (Info & Relationships) / 2.4.1 (Bypass Blocks), BUG-005 → 2.4.7 (Focus Visible), BUG-006 → 2.4.3 (Focus Order), BUG-007 → 2.1.2 (No Keyboard Trap).</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Remediation:</strong> Expected results say what *should* happen but don't propose a developer fix. Add a one-line "Fix:" per bug — e.g. for BUG-007 "Add Escape key handler that calls <code>dialog.close()</code> or move focus back to trigger".</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Numbering Gap:</strong> BUG-004 is missing — jumps from BUG-003 to BUG-005. Also the Axe section only has 1 bug (BUG-003) despite "viewport disables zooming" being mentioned in section 5 without its own bug entry.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-bold text-white">Alona</h3>
-          <span class="text-sm bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full">🚧 Pending</span>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">etq-amsterdam.com</code></p>
         <a href="submissions/Hw%20week%208.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
-        <div class="correction pending mt-3"><p class="text-sm text-slate-400">Corrections to be added.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Volume + Depth:</strong> 7 manual NVDA bugs, all with clean bug template. Identifies blocking issues — can't add to cart with keyboard (SS-4), can't select size (SS-5), filter section completely inaccessible (SS-7). These are real "site is unusable for keyboard users" findings.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Severity Calibration:</strong> Genuinely thoughtful — High for blockers (cart, size, filter), Medium for navigation friction (toggle button labels, reading order), Low for genuinely minor. Rare to see this level of differentiation.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Methodology:</strong> NVDA-driven manual + axe-core (24 issues, 1 critical) + Playwright (574 violations on aria-hidden focusable elements). Conclusion explicitly recommends combined approach.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Remediation:</strong> Conclusion lists 3 actionable fix categories (clear labels, contrast, ARIA). More directive than most submissions.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ Bug SS-1 Misclassified:</strong> "No voice input support in search field" is not a WCAG/a11y issue — voice dictation is a browser/OS feature (Windows Speech Recognition, macOS Voice Control), not a website requirement. Drop this bug or rescope it to "no voice search button" if that's what was meant.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ WCAG Mapping:</strong> No success criteria tagged. SS-4 maps to 2.1.1 (Keyboard), SS-7 to 2.1.1 + 4.1.2, SS-6 to 4.1.2 (Name, Role, Value). Adding IDs is a small change with big credibility gains.</p></div>
       </div>
 
     </section>
