@@ -137,7 +137,12 @@
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent Submission</span>
         </div>
         <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">en.aegeanair.com</code></p>
-        <a href="submissions/Report%20analysis_Yianna_Alexaki.pdf" class="text-indigo-400 hover:text-indigo-300 text-sm">📄 Submission</a>
+        <div class="flex gap-3 text-sm flex-wrap mb-1">
+          <a href="submissions/Report%20analysis_Yianna_Alexaki.pdf" class="text-indigo-400 hover:text-indigo-300">📄 Report</a>
+          <a href="submissions/yianna/aegean_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">aegean_a11y.spec.ts</a>
+          <a href="submissions/yianna/TestPage.ts" class="text-indigo-400 hover:text-indigo-300">TestPage.ts</a>
+          <a href="https://github.com/ialex688/HYF_Assignments/tree/main/tests/tests/Week8" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
+        </div>
         <div class="correction good mt-3"><p class="text-sm"><strong>✅ Comparative Analysis:</strong> The standout strength — explicit "where they aligned" vs "where manual went further" framing. axe-core caught 2 violations (button-name Critical, color-contrast Serious 4.16:1); manual found 9+ additional barriers (focus escape from popup, payment icons announced as blank, "Read more" link soup, password eye unnamed). Honest assessment of tooling limits.</p></div>
         <div class="correction good"><p class="text-sm"><strong>✅ Issue Identification:</strong> Wide POUR coverage — operable (focus trap escape, calendar confusion), perceivable (icons announced blank), understandable ("Read more" link text), robust (button-name).</p></div>
         <div class="correction good"><p class="text-sm"><strong>✅ Methodology:</strong> NVDA + WAVE + Playwright/axe-core + keyboard. Final reflection ("no single method is sufficient") shows real understanding of why combined approach matters.</p></div>
@@ -192,22 +197,26 @@
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Maria</h3>
-          <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Code Solid — Missing Report</span>
+          <h3 class="text-xl font-bold text-white">Maria Christensen</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent Submission</span>
         </div>
-        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">en.aegeanair.com</code></p>
-        <div class="text-sm text-slate-400 mb-2">📁 Playwright a11y test (axe-core)</div>
-        <div class="flex gap-3 text-sm flex-wrap">
-          <a href="submissions/maria/aegean_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">aegean_a11y.spec.ts</a>
-          <a href="submissions/maria/TestPage.ts" class="text-indigo-400 hover:text-indigo-300">TestPage.ts</a>
-          <a href="https://github.com/ialex688/HYF_Assignments/tree/main/tests/tests/Week8" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
+        <p class="text-sm text-slate-400 mb-2">Tested: <code class="text-indigo-300">c3consulting.dk/en/home</code></p>
+        <div class="flex gap-3 text-sm flex-wrap mb-1">
+          <a href="submissions/maria/FINAL-Accessibility-Evaluation-Report.pdf" class="text-indigo-400 hover:text-indigo-300">📄 Final Report</a>
+          <a href="submissions/maria/Annex1_Bug_Reports.pdf" class="text-indigo-400 hover:text-indigo-300">📄 Annex 1 — Bug Reports</a>
+          <a href="submissions/maria/homepage_a11y.spec.ts" class="text-indigo-400 hover:text-indigo-300">homepage_a11y.spec.ts</a>
+          <a href="submissions/maria/C3HomePage.ts" class="text-indigo-400 hover:text-indigo-300">C3HomePage.ts</a>
+          <a href="https://github.com/RomaC85/playwright-learning-exercises/tree/main/Week%208" class="text-slate-400 hover:text-slate-300">↗ GitHub</a>
         </div>
-        <div class="correction good mt-3"><p class="text-sm"><strong>✅ Test Code:</strong> Clean Playwright + AxeBuilder integration. Correct WCAG tag set (<code>wcag2a</code>, <code>wcag2aa</code>, <code>wcag21a</code>, <code>wcag21aa</code>). Logs each violation with rule ID, help, impact, and node count — useful for triage.</p></div>
-        <div class="correction good"><p class="text-sm"><strong>✅ Test Artifact:</strong> Attaches the full <code>axe-report.json</code> via <code>testInfo.attach()</code> — professional touch that makes CI runs auditable.</p></div>
-        <div class="correction missing"><p class="text-sm"><strong>❌ No Written Report:</strong> Assignment requires both code AND analysis (manual testing, comparison, conclusions). Submission is code-only — missing the report half entirely. See Yianna's submission on the same site (Aegean) for the analysis depth expected.</p></div>
-        <div class="correction missing"><p class="text-sm"><strong>❌ No Manual Testing:</strong> No keyboard walkthrough, no screen reader observations. Automated scans miss focus management, link clarity, popup behavior — exactly the issues Yianna documented manually on the same site.</p></div>
-        <div class="correction improve"><p class="text-sm"><strong>⚠️ POM Underused:</strong> <code>HomePage</code> only encapsulates <code>goto()</code>. Compare with Kira's POM that also exposes <code>runAccessibilityScan()</code> — better encapsulation, easier to reuse across pages.</p></div>
-        <div class="correction improve"><p class="text-sm"><strong>⚠️ Assertion Style:</strong> <code>expect(results.violations).toEqual([])</code> works but produces messy diff output on failure. Prefer <code>expect(results.violations.length).toBe(0)</code> with the violation log above acting as the diagnostic.</p></div>
+        <div class="correction good mt-3"><p class="text-sm"><strong>✅ WCAG Mapping (best in cohort):</strong> The standout strength — every issue tagged to a specific success criterion: 1.1.1 Non-text Content, 3.3.2 Labels or Instructions, 4.1.2 Name/Role/Value, 2.4.4 Link Purpose, 1.3.1 Info & Relationships, 1.4.1 Use of Color. This is the rubric's #1 weak spot in every other submission and you nailed it.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Comparative Summary Table:</strong> 11-row table comparing Manual / Axe DevTools / WAVE / axe-core counts side-by-side, with severity and priority columns. Quantifies tool overlap (e.g. images: 15 manual / 12 Axe / 15 WAVE) — same lesson Csaba delivered, executed even more thoroughly.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Methodology Breadth:</strong> 4 methods combined — Keyboard, NVDA, WAVE, axe-core. Conclusion explicitly argues automated tools alone are insufficient and recommends a combined approach. Real audit framing, not student bug list.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Report Structure:</strong> Professional 6-section layout (Findings → Automated → Analysis → Conclusion → Recommendations → Comparative Table) plus a separate Annex with detailed bug reports. Mirrors a real consulting deliverable.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Severity Differentiation:</strong> 3 tiers (Critical / Major / Minor) tied to issue type — form labels and alt text as Critical, link/heading/contrast as Major, landmarks as Minor. Defensible reasoning, not tool-default copy.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Test Assertion Bug:</strong> <code>homepage_a11y.spec.ts:34</code> reads <code>expect(results.violations.length).toBeGreaterThan(0)</code> — that asserts the site <em>has</em> violations, so the test passes only when accessibility is broken. The comment above it says "Assert no violations" — flip to <code>.toBe(0)</code> so the test fails when bugs exist (correct CI gate behavior).</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ POM Underused:</strong> <code>C3HomePage</code> only encapsulates <code>open()</code>. Kira's POM also exposes <code>runAccessibilityScan()</code> — pulls scan logic out of the test, making it reusable across pages. Small refactor, big payoff.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Manual Section Density:</strong> §1.1–1.3 are bulleted observations rather than per-bug entries. The Annex compensates with full bug template, but in the main report it would be stronger to reference Annex bug IDs inline (e.g. "Keyboard skips headings — see BUG-SS-02").</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Remediation Specificity:</strong> §5 lists priority categories ("implement labels", "fix ARIA") but stops short of code-level fix examples. Add one-line snippets per Critical bug: "<code>&lt;input aria-label='Email address'&gt;</code>", "<code>alt='Team meeting at C3 office'</code>". Devs can act on those without back-and-forth.</p></div>
       </div>
 
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
